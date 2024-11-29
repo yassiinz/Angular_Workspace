@@ -1,1 +1,13 @@
-<p>list-categories-component works!</p>
+<div class="container">
+    <span>Search: </span><input type="text" [(ngModel)]="titre" placeholder="Rechercher une catégorie">
+    <div class="row" >
+        <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let cat of categories | categoriePipe:titre"  style="margin-bottom: 20px;">
+            <div *ngIf=" cat.title == titre || !titre">
+        <img src={{cat.image}} (click)="imageclick(cat.description)" alt="Produits voitures" class="img-fluid h-
+        50 w-75">
+        <h3>{{  cat.title | uppercase }}</h3>
+        <button class="btn btn-primary" appHighlight *ngIf="cat.available">Voir produits</button>
+        <div *ngIf="!cat.available" style="font-size: 18px;color:red;">Catégorie non disponible</div>
+        </div>
+    </div>
+</div>
