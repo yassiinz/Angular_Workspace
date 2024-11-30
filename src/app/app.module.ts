@@ -10,6 +10,8 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { ListCategoriesComponentComponent } from './list-categories-component/list-categories-component.component';
 import { HighlightDirective } from './highlight.directive';
 import { CategoriePipePipe } from './categorie-pipe.pipe';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { CategoriePipePipe } from './categorie-pipe.pipe';
     ListCategoriesComponentComponent,
     HighlightDirective,
     CategoriePipePipe,
+    NotFoundPageComponent,
+    ProductsCategoryComponent,
   ],
   imports: [
     BrowserModule,
