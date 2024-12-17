@@ -12,6 +12,7 @@ import { HighlightDirective } from './highlight.directive';
 import { CategoriePipePipe } from './categorie-pipe.pipe';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
+import { TrainingComponent } from './training/training.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ProductsCategoryComponent } from './products-category/products-category
     CategoriePipePipe,
     NotFoundPageComponent,
     ProductsCategoryComponent,
+    TrainingComponent,
   ],
   imports: [
     BrowserModule,
