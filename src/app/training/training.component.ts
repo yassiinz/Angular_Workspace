@@ -1,3 +1,4 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./training.component.css']
 })
 export class TrainingComponent {
+  
   //event binding
   inputValue:string='';
   onInputChange(event: Event){
@@ -28,4 +30,8 @@ export class TrainingComponent {
   //Les directives attributs
   isError = false;
   resultat = 15;
+  myDate = new Date;
+  firstName: string = '';
+
+
 }

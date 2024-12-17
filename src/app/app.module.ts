@@ -13,6 +13,8 @@ import { CategoriePipePipe } from './categorie-pipe.pipe';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { TrainingComponent } from './training/training.component';
+import { TrainDirecDirective } from './train-direc.directive';
+import { TrainPipePipe } from './train-pipe.pipe';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { TrainingComponent } from './training/training.component';
     NotFoundPageComponent,
     ProductsCategoryComponent,
     TrainingComponent,
+    TrainDirecDirective,
+    TrainPipePipe,
   ],
   imports: [
     BrowserModule,

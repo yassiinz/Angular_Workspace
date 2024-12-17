@@ -5,9 +5,11 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 })
 export class HighlightDirective {
 
-  @Input() color = 'green';
+  @Input() color = 'yellow';
+
  
   constructor(private el: ElementRef, private renderer: Renderer2) {}
+  
  
   ngAfterViewInit() {
     this.setBackgroundColor(this.color);
@@ -28,6 +30,7 @@ export class HighlightDirective {
   @HostListener('click') onClick() {
     this.color = 'gray';
   }
+  
 
 
 }

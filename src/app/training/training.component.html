@@ -7,7 +7,7 @@
 
 <b>Two Way Data Binding :</b><br>
 <input [(ngModel)]="FirstName">
-<p>{{FirstName}}</p><br>
+<p >{{FirstName}}</p><br>
 
 <b>Les directives structurelles :</b><br>
 <div *ngIf="isvisible;then thenBlock else elseBlock"></div>
@@ -21,3 +21,10 @@
 <b>Les directives attributs :</b>
 <p [ngClass]="{'text_error':isError,'text_success':!isError}">text</p>
 <p [ngStyle]="{'color': resultat > 10 ? 'green':'red'}">Ce texte aura la couleur verte si result est supérieur à 10, sinon il aura la couleur rouge</p>
+
+<b appTrainDirec>Les directives personnalisées sans valeur en entrée</b><br><br>
+<b appHighlight [color]="'lightgreen'">Les directives personnalisées avec valeur en entrée</b><br><br>
+<b>Les pipes natifs :</b>
+<p>La date est : {{ myDate | date:'yyyy-MM-dd' }}</p>
+<p>Le prix est : {{ 12.34 | trainPipe }}</p>
+
