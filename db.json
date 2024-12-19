@@ -1,0 +1,12 @@
+{
+    "users": [
+      {        
+        "name": "riahi",
+        "surname": "Yassine",
+        "email": "yassine.riahi@example.com",
+        "password": "password",
+        "role": "ROLE ADMIN"
+      }
+    ]
+}
+  

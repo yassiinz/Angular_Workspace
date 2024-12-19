@@ -15,7 +15,8 @@ import { ProductsCategoryComponent } from './products-category/products-category
 import { TrainingComponent } from './training/training.component';
 import { TrainDirecDirective } from './train-direc.directive';
 import { TrainPipePipe } from './train-pipe.pipe';
-import { LoginModule } from './login/login.module';
+import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -32,12 +33,13 @@ import { LoginModule } from './login/login.module';
     TrainingComponent,
     TrainDirecDirective,
     TrainPipePipe,
+    LoginComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
