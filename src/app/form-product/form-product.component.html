@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu à proposer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: gray;
+    }
+
+    button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+<form #productForm="ngForm" (ngSubmit)="onSave(productForm)" novalidate>
+    <div>
+      <label for="name">Name:</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        [(ngModel)] = "product.name"
+        required
+        minlength="5"
+        pattern="[a-zA-Z]*"/>
+      <div *ngIf="productForm.submitted && !productForm.controls['name']?.valid">
+        <small *ngIf="productForm.controls['name']?.errors?.['required']">Name is required.</small>
+        <span *ngIf="productForm.controls['name']?.errors?.['minlength']">Name must be at least 5 characters.</span>
+        <small *ngIf="productForm.controls['name']?.errors?.['pattern']">Name must contain only letters.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="categoryId">Category ID:</label>
+      <input
+        id="categoryId"
+        name="categoryId"
+        type="number"
+        [(ngModel)]="product.categoryId"
+        required
+      />
+      <div *ngIf="productForm.submitted && !productForm.controls['categoryId']?.valid">
+        <small>Category ID is required.</small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="price">Price:</label>
+      <input
+        id="price"
+        name="price"
+        type="text"
+        [(ngModel)]="product.price"
+        required
+        pattern="^\d+(\.\d+)?$"
+      />
+      <div *ngIf="productForm.submitted && !productForm.controls['price']?.valid">
+        <small *ngIf="productForm.controls['price']?.errors?.['required']">Price is required.</small>
+        <small *ngIf="productForm.controls['price']?.errors?.['pattern']">Price must be a valid number.</small>-->
+      </div>
+    </div>
+  
+    <div>
+      <label for="promotion">Promotion:</label>
+      <input
+        id="promotion"
+        name="promotion"
+        type="number"
+        [(ngModel)]="product.promotion"
+        pattern="^(0|[1-9][0-9]?)$"
+      />
+      <div *ngIf="productForm.submitted && !productForm.controls['promotion']?.valid">
+        <small *ngIf="productForm.controls['promotion']?.errors?.['pattern']">
+          Promotion must be less than or equal to 100.
+        </small>
+      </div>
+    </div>
+  
+    <div>
+      <label for="image">Image:</label>
+      <input id="image" name="image" type="text" [(ngModel)]="product.image" />
+    </div>
+  
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="product.description"></textarea>
+    </div>
+  
+    <div>
+      <label for="brand">Brand:</label>
+      <input id="brand" name="brand" type="text" [(ngModel)]="product.brand" />
+    </div>
+  
+    <button type="submit" [disabled]="productForm.invalid">Save</button>
+  </form>
+  <div *ngFor="let prod of products">
+    {{prod.name}}
+    {{prod.categoryId}}
+    {{prod.price}}
+    {{prod.promotion}}
+    {{prod.image}}
+    {{prod.description}}
+    {{prod.brand}}
+  </div>
+  
+  

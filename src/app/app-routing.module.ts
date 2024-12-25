@@ -4,13 +4,12 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { TrainingComponent } from './training/training.component';
-import { LoginComponent } from './login/login.component';
-import { AuthentificationGuard } from './authentification.guard';
+import { FormProductComponent } from './form-product/form-product.component';
 const routes: Routes = [
   {path:'home',component:HomeComponentComponent },
   {path:'ProductsCategory/:id',component:ProductsCategoryComponent},
   {path:'train',component:TrainingComponent},
-  { path: 'login', component: LoginComponent,canActivate: [AuthentificationGuard] },
+  { path: 'add-product',component: FormProductComponent},
   ​{ path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundPageComponent }
   

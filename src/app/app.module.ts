@@ -15,7 +15,7 @@ import { ProductsCategoryComponent } from './products-category/products-category
 import { TrainingComponent } from './training/training.component';
 import { TrainDirecDirective } from './train-direc.directive';
 import { TrainPipePipe } from './train-pipe.pipe';
-import { LoginComponent } from './login/login.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 
 
@@ -33,8 +33,8 @@ import { LoginComponent } from './login/login.component';
     TrainingComponent,
     TrainDirecDirective,
     TrainPipePipe,
-    LoginComponent,
-
+    FormProductComponent,
+    
   ],
   imports: [
     BrowserModule,
