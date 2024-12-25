@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { TrainingComponent } from './training/training.component';
 import { TrainDirecDirective } from './train-direc.directive';
 import { TrainPipePipe } from './train-pipe.pipe';
 import { FormProductComponent } from './form-product/form-product.component';
+import { ReactiveFormProductComponent } from './reactive-form-product/reactive-form-product.component';
 
 
 
@@ -34,12 +35,14 @@ import { FormProductComponent } from './form-product/form-product.component';
     TrainDirecDirective,
     TrainPipePipe,
     FormProductComponent,
+    ReactiveFormProductComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

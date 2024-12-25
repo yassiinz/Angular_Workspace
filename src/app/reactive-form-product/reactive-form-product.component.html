@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu à proposer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      /*opacity: 50%;*/
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: gray;
+    }
+
+    button:disabled {
+      background-color: #ddd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+<form  [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" formControlName="name"/>
+      <span *ngIf="productForm.get('name')">Champ obligatoire</span>
+    </div>
+  
+    <div>
+      <label for="categoryId">Category ID:</label>
+      <input id="categoryId" name="categoryId" type="number" formControlName="categoryId"/>
+      <span *ngIf="productForm.get('categoryId')"></span>   
+    </div>
+  
+    <div>
+      <label for="price">Price:</label>
+      <input id="price" name="price" type="text" formControlName="price"/>
+      <span *ngIf="productForm.get('price')">Price must be a number. </span>
+    </div>
+  
+    <div>
+      <label for="promotion">Promotion:</label>
+      <input id="promotion" name="promotion" type="number" formControlName="promotion"/>
+      <span *ngIf="productForm.get('promotion')">Promotion must be less than or equal to 100. </span>
+    </div>
+  
+    <div>
+      <label for="image">Image:</label>
+      <input id="image" name="image" type="text" formControlName="image"/>
+      <span *ngIf="productForm.get('image')">Champ obligatoire</span>
+    </div>
+  
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" formControlName="description"></textarea>
+      <span *ngIf="productForm.get('description')">Champ obligatoire</span>
+    </div>
+  
+    <div>
+      <label for="brand">Brand:</label>
+      <input id="brand" name="brand" type="text" formControlName="brand"/>
+        <span *ngIf="productForm.get('brand')">Champ obligatoire</span>
+    </div>
+  
+    <button type="submit" [disabled]="productForm.invalid">Save</button>
+  </form>
+
