@@ -17,6 +17,8 @@ import { TrainDirecDirective } from './train-direc.directive';
 import { TrainPipePipe } from './train-pipe.pipe';
 import { FormProductComponent } from './form-product/form-product.component';
 import { ReactiveFormProductComponent } from './reactive-form-product/reactive-form-product.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './parent/child/child.component';
 
 
 
@@ -36,6 +38,8 @@ import { ReactiveFormProductComponent } from './reactive-form-product/reactive-f
     TrainPipePipe,
     FormProductComponent,
     ReactiveFormProductComponent,
+    ParentComponent,
+    ChildComponent,
     
   ],
   imports: [

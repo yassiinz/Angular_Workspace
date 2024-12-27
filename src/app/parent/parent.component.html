@@ -1,0 +1,11 @@
+<p>parent works!</p>
+<div>
+    <h1>child list </h1>
+    <app-child 
+    *ngFor="let ch of children"  
+    [child]="ch"
+    (childDelete)="deleteChild(ch)"
+    ></app-child>
+</div>
+
+<div>{{messages}}</div>
